@@ -64,21 +64,25 @@ function getRandomQuote() {
 ***/
 
 function printQuote() {
-  const quoteP = document.querySelector('.quote');
-  const sourceP = document.querySelector('.source');
-  const citationSpan = document.querySelector('.citation');
-  const yearSpan = document.querySelector('.year');
+  const quoteBox = document.getElementById('quote-box');
   quoteToPrint = getRandomQuote();
-  console.log(quoteP);
-  console.log(sourceP);
-  console.log(citationSpan);
-  console.log(yearSpan);
+  let quoteString = `<p class="quote">${quoteToPrint.quote}</p><p class="source">${quoteToPrint.source}`;
 
-  quoteP.textContent = quoteToPrint.quote;
-  sourceP.textContent = quoteToPrint.source;
-  citationSpan.textContent = quoteToPrint.citation;
-  yearSpan.textContent = quoteToPrint.year;  
+  if (quoteToPrint.citation !== undefined) {
+    quoteString += `<span class="citation">${quoteToPrint.citation}</span>`;
+  }
+
+  if (quoteToPrint.year !== undefined) {
+    quoteString += `<span class="year">${quoteToPrint.year}</span></p>`;
+  } else {
+    quoteString += `</p>`;
+  }
+  
+  console.log(quoteString);
 }
+
+printQuote()
+
 
 /***
  * click event listener for the print quote button
