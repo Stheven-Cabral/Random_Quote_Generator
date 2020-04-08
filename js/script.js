@@ -66,9 +66,13 @@ function getRandomQuote() {
 function printQuote() {
   const quoteP = document.querySelector('.quote');
   const sourceP = document.querySelector('.source');
-  const citationSpan = document.querySelector('.source .citation');
-  const yearSpan = document.querySelector('.source .year');
+  const citationSpan = document.querySelector('.citation');
+  const yearSpan = document.querySelector('.year');
   quoteToPrint = getRandomQuote();
+  console.log(quoteP);
+  console.log(sourceP);
+  console.log(citationSpan);
+  console.log(yearSpan);
 
   quoteP.textContent = quoteToPrint.quote;
   sourceP.textContent = quoteToPrint.source;
