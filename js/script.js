@@ -49,8 +49,6 @@ quotes =[
   }
 ];
 
-console.log(quotes);
-
 /***
  * `getRandomQuote` function
 ***/
