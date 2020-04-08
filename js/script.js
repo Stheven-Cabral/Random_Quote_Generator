@@ -18,7 +18,7 @@ quotes =[
     year: "1994"
   }, 
   {
-    quote: "Do, or do not. There is no \“\'try\'.",
+    quote: "Do, or do not. There is no \'try\'.",
     source: "Yoda",
     citation: "The Empire Strikes Back",
     year: "1980"
