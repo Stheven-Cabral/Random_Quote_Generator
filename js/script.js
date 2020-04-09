@@ -3,10 +3,6 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
-
 /*** 
  * `quotes` array 
 ***/
@@ -50,43 +46,41 @@ quotes =[
 ];
 
 /***
- * `getRandomQuote` function
+ * `getRandomQuote` function that returns a random quote object from the quotes array.
+ * @returns {object} A random quotes object.
 ***/
 
 function getRandomQuote() {
   const randomNumber = Math.floor(Math.random() * 6);
-
   return quotes[randomNumber];
 }
 
 /***
- * `printQuote` function
+ * `printQuote` function that constructs the quote HTML and adds it into the div with the ID 'quote-box'.
 ***/
 
 function printQuote() {
-  const quoteBox = document.getElementById('quote-box');
   quoteToPrint = getRandomQuote();
   let quoteString = `<p class="quote">${quoteToPrint.quote}</p><p class="source">${quoteToPrint.source}`;
-
   if (quoteToPrint.citation !== undefined) {
     quoteString += `<span class="citation">${quoteToPrint.citation}</span>`;
   }
-
   if (quoteToPrint.year !== undefined) {
-    quoteString += `<span class="year">${quoteToPrint.year}</span></p>`;
-  } else {
-    quoteString += `</p>`;
+    quoteString += `<span class="year">${quoteToPrint.year}</span>`;
   }
-  
-  console.log(quoteString);
+  quoteString += `</p>`;
+  document.getElementById('quote-box').innerHTML = quoteString; 
 }
+
+/***
+ * Calls the printQuote function to display a quote on page load.
+ ***/
 
 printQuote()
 
 
 /***
- * click event listener for the print quote button
- * DO NOT CHANGE THE CODE BELOW!!
+ * click event listener for the print quote button that calls the `printQuote` function.
 ***/
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
