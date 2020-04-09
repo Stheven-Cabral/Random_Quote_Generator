@@ -106,7 +106,7 @@ printQuote()
 /***
  * `changeQuote` function - Changes the displayed quote every 8 seconds.
  * Call the `changeQuote` function.
- */
+ ***/
 
  function changeQuote() {
    setInterval(printQuote, 8000)
